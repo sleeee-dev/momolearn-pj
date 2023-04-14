@@ -16,13 +16,7 @@
 
 
 ## 👩‍💻 팀원
-
-|   이름   |                        깃허브 주소                         | 
-| :------: | :--------------------------------------------------------: | 
-|  🌱김솔진  | [https://github.com/noljis](https://github.com/noljis)   | 
-|  🌌박혜인  | [https://github.com/PHyeinP](https://github.com/PHyeinP) |
-|  🐲이민지  | [https://github.com/minddi00](https://github.com/minddi00) |
-|  🍋이시현  | [https://github.com/SIHYEONee](https://github.com/SIHYEONee) |
+🌱김솔진 🌌박혜인 🐲이민지 🍋이시현
 
 
 ## ‼️ DB설정을 위해 다음 파일을 받아주세요
