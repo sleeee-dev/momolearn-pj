@@ -58,7 +58,6 @@
 <img src="https://img.shields.io/badge/spring tool suite 4-6DB33F?style=for-the-badge&logo=spring&logoColor=green">
 <img src="https://img.shields.io/badge/Visual Studio Code-00A6CC?style=for-the-badge&logo=visualstudiocode&logoColor=blue">
 <img src="https://img.shields.io/badge/postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white">
-<img src="https://img.shields.io/badge/docker-2496ED?style=for-the-badge&logo=docker&logoColor=white">
 <img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white">
 <img src="https://img.shields.io/badge/sourcetree-0052CC?style=for-the-badge&logo=sourcetree&logoColor=white">
 <br>
@@ -76,11 +75,12 @@
 **💡소제목을 클릭하시면 다시 리스트로 돌아옵니다.**
 
  1. [회원가입](#join) (일반 회원가입/소셜 간편가입)
- 2. [로그인](#login) 
- 3. [강사 신청](#teacher)
- 4. [강의 등록](#lecture)
- 5. [수강 신청](#payment)
- 6. [게시판](#community)
+ 2. [로그인](#login)
+ 3. [강사진](#teacher)
+ 4. [강사 신청,등록](#applyteacher)
+ 5. [강의 등록](#lecture)
+ 6. [수강 신청](#payment)
+ 7. [게시판](#community)
 
 ### 1. <a name="join">[회원가입](#2)</a>
 #### (1) 일반 회원가입
@@ -101,10 +101,23 @@
 ![일반 로그인](https://user-images.githubusercontent.com/117498827/230252820-0b2446d8-be9a-4a7f-9132-3ef179198280.gif)
 ⚡필수 기입 속성은 ID, PW입니다.<br>
 
-### 3. <a name="teacher">[강사 신청](#2)</a>
+### 4. <a name="applyteacher">[강사 신청](#2)</a>
+#### (1) 강사진 목록
+
+<p align="center">
+
+</p>
+
+#### (2) 강사 신청
+
 <p align="center">
  
 <img src="https://user-images.githubusercontent.com/117498827/230254773-c21529f7-6f8d-4d69-8f75-4514dc600bcf.gif" alt="강사신청" width="500"/>
+</p>
+
+#### (3) 강사 승인,등록
+
+<p align="center">
 <img src="https://user-images.githubusercontent.com/117498827/230516168-2917b3f3-35e2-4006-a7c8-667d2064b712.gif" alt="강사 승인" width="500"/><br>
 
 </p>
@@ -114,7 +127,8 @@
 ⚡기존 회원의 정보가 신청서에 입력되며, 필수 기입 속성은 연락처, 포트폴리오url, 희망분야, 자기소개입니다.<br>
 ⚡관리자는 회원들의 신청서를 모두 조회할 수 있고, 승인할 수 있습니다.<br>
 ⚡신청서는 수정과 삭제가 가능하며, 관리자가 승인처리시 수정과 삭제가 불가능합니다.<br>
-
+⚡강사진 목록에 등록된 강사진을 확인할 수 있고 프로필 상세보기를 통해 강사의 프로필을 확인할 수 있습니다.<br>
+⚡강사 프로필에서 개설강의를 통해 강사가 개설한 강의목록을 확인하고 해당 강의를 신청할 수 있습니다. - 개발중<br>
 
 ### 4. <a name="lecture">[강의 등록](#2)</a>
 
