@@ -94,13 +94,13 @@ public class ApplyTeacherController {
 		return "teachers/at-readform";
 	}
 
-	@GetMapping(value = "/read/{id}")
-	public String read(Model model, @PathVariable int id, @ModelAttribute("members") MembersDTO members)
+	@GetMapping(value = "/read/{applyNo}")
+	public String read(Model model, @PathVariable int applyNo, @ModelAttribute("members") MembersDTO members)
 			throws NotExistException, MessageException {
 
 		if(members.getGrade().equals("admin")) {
 			
-			ApplyTeacherDTO apply = applyTeacherService.getOneApplyTeacher(id);
+			ApplyTeacherDTO apply = applyTeacherService.getOneApplyTeacher(applyNo);
 			MembersDTO member = membersService.getOneMember(apply.getMembersMemId());
 			
 			model.addAttribute("apply", apply);
@@ -121,29 +121,29 @@ public class ApplyTeacherController {
 		return "teachers/at-updateform";
 	}
 
-	@PostMapping(value = "/update/{id}")
-	public String update(@PathVariable int id, Model model, @ModelAttribute("members") MembersDTO members,
+	@PostMapping(value = "/update/{applyNo}")
+	public String update(@PathVariable int applyNo, Model model, @ModelAttribute("members") MembersDTO members,
 			ApplyTeacherDTO apply) throws NotExistException {
 
-		applyTeacherService.update(id, apply);
+		applyTeacherService.update(applyNo, apply);
 		model.addAttribute("apply", apply);
 		model.addAttribute("member", members);
 
 		return "teachers/at-readform";
 	}
 
-	@PostMapping(value = "/delete/{id}")
-	public String delete(@PathVariable int id) throws NotExistException {
+	@PostMapping(value = "/delete/{applyNo}")
+	public String delete(@PathVariable int applyNo) throws NotExistException {
 		
-		applyTeacherService.delete(id);
+		applyTeacherService.delete(applyNo);
 		return "teachers/at-mylist";
 	}
 
-	@PostMapping(value = "/approve/{id}")
-	public String approve(Model model, @PathVariable int id) throws NotExistException, MessageException {
+	@PostMapping(value = "/approve/{applyNo}")
+	public String approve(Model model, @PathVariable int applyNo) throws NotExistException, MessageException {
 
-		applyTeacherService.approve(id);
-		ApplyTeacherDTO apply = applyTeacherService.getOneApplyTeacher(id);
+		applyTeacherService.approve(applyNo);
+		ApplyTeacherDTO apply = applyTeacherService.getOneApplyTeacher(applyNo);
 
 		membersService.updateGrade(apply.getMembersMemId());
 		MembersDTO member = membersService.getOneMember(apply.getMembersMemId());

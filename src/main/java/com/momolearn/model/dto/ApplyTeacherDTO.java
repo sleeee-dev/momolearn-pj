@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @Data
 public class ApplyTeacherDTO {
 
-    private int id;
+    private int applyNo;
     
     private String membersMemId;
     
@@ -33,7 +33,7 @@ public class ApplyTeacherDTO {
     public ApplyTeacher toEntity(ApplyTeacherDTO applyDTO) {
     	
     	return ApplyTeacher.builder()
-    			.id(applyDTO.getId())
+    			.applyNo(applyDTO.getApplyNo())
     			.phoneNum(applyDTO.getPhoneNum())
     			.pfLink(applyDTO.getPfLink())
     			.hopeField(applyDTO.getHopeField())

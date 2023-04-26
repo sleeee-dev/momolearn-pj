@@ -45,7 +45,7 @@
                         <c:choose>
                             <c:when test="${not empty apply}">
                                 <tr>
-                                    <td>${apply.id}</td>
+                                    <td>${apply.applyNo}</td>
                                     <td><a href="${pageContext.request.contextPath}/applyteacher/read">${apply.membersMemId}</a></td>
                                     <!-- <td><a href="${pageContext.request.contextPath}/applyteacher/read{apply.id}">${apply.membersMemId}</a></td> -->
                                     <td>${apply.applyRege}</td>

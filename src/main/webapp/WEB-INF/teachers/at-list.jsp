@@ -31,6 +31,7 @@
 	<!-- Header End -->
 
             <!-- 강사 신청 전체 리스트 Start -->
+<%--${list}--%>
             <div class="container">
                 <form method="get">
                     <div class="form-group">
@@ -58,9 +59,9 @@
                                 <c:forEach var="list" items="${list}">
                                     <c:if test="${empty param.approve or list.approve == param.approve}">
                                         <tr>
-                                            <td>${list.id}</td>
-                                            <td><a href="${pageContext.request.contextPath}/applyteacher/read/${list.id}">${list.membersMemId}</a></td>
-                                            <!-- <td><a href="${pageContext.request.contextPath}/applyteacher/read/${list.id}">${list.membersMemId}</a></td> -->
+                                            <td>${list.applyNo}</td>
+                                            <td><a href="${pageContext.request.contextPath}/applyteacher/read/${list.applyNo}">${list.membersMemId}</a></td>
+                                            <!-- <td><a href="${pageContext.request.contextPath}/applyteacher/read/${list.applyNo}">${list.membersMemId}</a></td> -->
                                             <td>${list.applyRege}</td>
                                             <td>
                                                 <c:choose>

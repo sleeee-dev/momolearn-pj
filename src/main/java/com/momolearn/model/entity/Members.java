@@ -67,6 +67,9 @@ public class Members  {
 	
 	@OneToOne(mappedBy = "members", cascade = CascadeType.REMOVE)
 	public ApplyTeacher applyTeacher;
+
+	@OneToOne(mappedBy = "members", cascade = CascadeType.REMOVE)
+	public ApplyTeacher Teachers;
 	
 	@OneToMany(mappedBy = "members" , cascade = CascadeType.REMOVE)
 	public List<Board> board = new ArrayList<>();

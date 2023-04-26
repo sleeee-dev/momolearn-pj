@@ -17,6 +17,10 @@
                     flex-wrap: wrap;
                 }
 
+                body {
+                    margin-top: 0;
+                    padding-top: 0;
+                }
                 /* Set a style for all buttons */
                 button {
                     background-color: #04AA6D;
@@ -52,9 +56,9 @@
                     border: 2px solid #06BBCC;
                 }
 
-                .container {
-                    padding: 16px;
-                }
+                /*.container {*/
+                /*    padding: 16px;*/
+                /*}*/
 
                 span.psw {
                     float: right;
@@ -140,13 +144,6 @@
                     font-weight: bold;
                 }
             </style>
-        </head>
-
-
-
-
-
-
 
         <jsp:include page="/separate/head.jsp"></jsp:include>
 
@@ -204,7 +201,7 @@
                         <a href="#" id="pfLink"
                             onclick="location.href=document.getElementById('pfLink').innerHTML;">포트폴리오
                             링크</a><br>
-                        <span id="pf"><b>소개</b></span><br>
+                        <span id="intro-title"><b>소개</b></span><br>
                         <span id="intro">intro</span><br>
 
                         <!-- <button type="button" onclick="" class="cancelbtn" style=background-color:#06BBCC>개설
