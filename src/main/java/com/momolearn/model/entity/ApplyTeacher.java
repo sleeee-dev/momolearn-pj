@@ -41,10 +41,10 @@ public class ApplyTeacher  {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @ApiModelProperty(example="1")
-    private Integer id; 
+    private Integer applyNo;
 
     @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "apply_id")
+    @JoinColumn(name = "mem_id")
     private Members members; 
 
     @Column(length = 20, nullable = false)
@@ -75,8 +75,8 @@ public class ApplyTeacher  {
     @OneToOne(mappedBy = "applyTeacher", cascade = CascadeType.REMOVE)
     public Teachers teacher;
     
-	public ApplyTeacher(int id) {
-		this.id = id;
+	public ApplyTeacher(int applyNo) {
+		this.applyNo = applyNo;
 	}
 
 	public void setApplyForm(String phoneNum, String hopeField, String pfLink, String intro) {

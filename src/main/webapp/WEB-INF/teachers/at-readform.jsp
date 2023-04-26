@@ -97,7 +97,7 @@
                                         <c:choose>
                                             <c:when test="${members.grade == 'admin' && apply.approve == 'false'}">
                                                 <form id="sm" name="ta" method="post"
-                                                    action="${pageContext.request.contextPath}/applyteacher/approve/${apply.id}">
+                                                    action="${pageContext.request.contextPath}/applyteacher/approve/${apply.applyNo}">
                                                     <input class="btn btn-primary" type="submit" value="승인"
                                                         id="approveButton"
                                                         onclick="return confirm('강사신청서를 승인하시겠습니까?');">
@@ -107,7 +107,7 @@
                                             </c:when>
                                             <c:when test="${members.grade == 'admin' && apply.approve == 'true'}">
                                                 <form id="sm" name="ta" method="post"
-                                                    action="${pageContext.request.contextPath}/applyteacher/approve/${apply.id}">
+                                                    action="${pageContext.request.contextPath}/applyteacher/approve/${apply.applyNo}">
                                                     <input class="btn btn-secondary" type="submit" value="승인" disabled>
                                                 </form>
                                                 <button type="button" class="btn btn-primary mr-2"
@@ -119,7 +119,7 @@
                                                     <input class="btn btn-primary" type="submit" value="수정">
                                                 </form>
                                                 <form id="sm" name="ta" method="post"
-                                                    action="${pageContext.request.contextPath}/applyteacher/delete/${apply.id}">
+                                                    action="${pageContext.request.contextPath}/applyteacher/delete/${apply.applyNo}">
                                                     <input class="btn btn-primary" type="submit" value="삭제"
                                                         onclick="return confirm('강사신청서를 삭제하시겠습니까?');">
                                                 </form>

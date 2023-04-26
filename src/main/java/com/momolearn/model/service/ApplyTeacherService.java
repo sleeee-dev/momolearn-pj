@@ -27,14 +27,14 @@ public class ApplyTeacherService {
 	
 	private final MembersRepository membersRepository;
 	
-	private ModelMapper mapper = new ModelMapper();
+	private final ModelMapper mapper = new ModelMapper();
 
 	public List<ApplyTeacherDTO> getApplyList() {
-		
+
 		List<ApplyTeacher> applylists = applyTeacherRepository.findAll();
-		
+
 		return Arrays.asList(mapper.map(applylists, ApplyTeacherDTO[].class));
-		
+
 	}
 	
 	public ApplyTeacherDTO write(ApplyTeacherDTO apply) throws MessageException{
@@ -65,33 +65,33 @@ public class ApplyTeacherService {
 	}
 	
 	@Transactional
-	public void update(int id, ApplyTeacherDTO applyDTO) throws NotExistException {
+	public void update(int applyNo, ApplyTeacherDTO applyDTO) throws NotExistException {
 		
-		ApplyTeacher applyTeacher = applyTeacherRepository.findById(id)
+		ApplyTeacher applyTeacher = applyTeacherRepository.findById(applyNo)
 				.orElseThrow(() -> new NotExistException("신청서가 존재하지 않습니다."));
 		applyTeacher.setApplyForm(applyDTO.getPhoneNum(), applyDTO.getHopeField(), applyDTO.getPfLink(), applyDTO.getIntro());
 	}
 
 	@Transactional
-	public void delete(int id) throws NotExistException {
+	public void delete(int applyNo) throws NotExistException {
 		
-		ApplyTeacher applyTeacher = applyTeacherRepository.findById(id)
+		ApplyTeacher applyTeacher = applyTeacherRepository.findById(applyNo)
 				.orElseThrow(()->new NotExistException("신청서가 존재하지 않습니다."));
 		applyTeacherRepository.delete(applyTeacher);
 	}
 	
 	@Transactional
-	public void approve(int id) throws NotExistException {
+	public void approve(int applyNo) throws NotExistException {
 		
-		ApplyTeacher applyTeacher = applyTeacherRepository.findById(id)
+		ApplyTeacher applyTeacher = applyTeacherRepository.findById(applyNo)
 				.orElseThrow(()->new NotExistException("신청서가 존재하지 않습니다."));
 		applyTeacher.setApprove("true");
 	}
 
-	public ApplyTeacherDTO getOneApplyTeacher(int id) throws NotExistException {
+	public ApplyTeacherDTO getOneApplyTeacher(int applyNo) throws NotExistException {
 		
 		System.out.println("service.getOneApplyTeacher() : 신청 번호로 1명 조회" );
-		ApplyTeacher applyteacher = applyTeacherRepository.findById(id)
+		ApplyTeacher applyteacher = applyTeacherRepository.findById(applyNo)
 				.orElseThrow(() -> new NotExistException("현재 등록된 신청서가 없습니다."));
 		
 		return mapper.map(applyteacher, ApplyTeacherDTO.class);

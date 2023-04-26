@@ -13,7 +13,7 @@ function createCard(teacher) {
 
     // const cardImg = document.createElement('img');
     // cardImg.classList.add('card-img-bottom');
-    // cardImg.src = '../img/about.jpg';
+    // cardImg.src = `../img/profile/${teacher.memId}.jpg`;
     // cardImg.alt = 'Card image';
     // cardImg.style.width = '100%';
 
