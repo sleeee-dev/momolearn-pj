@@ -30,7 +30,7 @@ import lombok.Setter;
 @Builder
 
 @Entity
-@ApiModel(value="강사 정보", description = "강사번호, 연락처, 희망분야, 소개, 포트폴리오url, 강사내역 정보")
+@ApiModel(value="강사 정보", description = "강사번호, 회원아이디, 연락처, 희망분야, 소개, 포트폴리오url, 강사내역 정보")
 public class Teachers {	
 	
 	@Id
@@ -38,7 +38,11 @@ public class Teachers {
 	@Column(length = 20)
 	@ApiModelProperty(example="1")
 	private Integer teacherNo;
-	
+
+	@OneToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "mem_id")
+	private Members members;
+
 	@Column(name = "phone_num", nullable = false)
 	@ApiModelProperty(example="010-1234-5678")
 	private String phoneNum;
@@ -56,7 +60,7 @@ public class Teachers {
 	private String pfLink;
 	
 	@OneToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "apply_id")
+	@JoinColumn(name = "apply_no")
 	private ApplyTeacher applyTeacher;
 	
 	@OneToMany(mappedBy = "teachers" , cascade = CascadeType.REMOVE)

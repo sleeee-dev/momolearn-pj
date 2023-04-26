@@ -33,7 +33,7 @@
 		<!-- Header End -->
 
             <!-- Form Start -->
-            <form id="sm" name="ta" method="post" onsubmit="return allCheck()" action="${pageContext.request.contextPath}/applyteacher/update/${apply.id}">
+            <form id="sm" name="ta" method="post" onsubmit="return allCheck()" action="${pageContext.request.contextPath}/applyteacher/update/${apply.applyNo}">
                 <div align="center">
                     <h2>강사 등록 신청서</h2>
                     <div>

@@ -20,6 +20,6 @@ public interface TeachersRepository extends JpaRepository<Teachers, Integer>{
 	
 	Optional<Teachers> findByApplyTeacherMembersMemId(String memId);
 
-	Optional<Teachers> findByApplyTeacherId(int id);
+	Optional<Teachers> findByApplyTeacherApplyNo(int applyNo);
 
 }
