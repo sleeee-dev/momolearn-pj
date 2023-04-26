@@ -31,7 +31,7 @@
 
 ## ☁ ERD
 
-<img src="https://user-images.githubusercontent.com/111185073/229674426-24f719f6-ee88-48f1-9b1f-89627b420b43.png" width="80%"/>
+<img src="https://user-images.githubusercontent.com/130329058/234478679-aa59b5e9-c019-4a19-89da-f9a3d9c52acd.png" width="80%"/>
 
 
 ## <a name="list"></a>📜List 
