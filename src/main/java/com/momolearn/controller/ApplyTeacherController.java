@@ -12,15 +12,14 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.momolearn.exception.MessageException;
 import com.momolearn.exception.NotExistException;
-import com.momolearn.model.dto.ApplyTeacherDTO;
-import com.momolearn.model.dto.MembersDTO;
-import com.momolearn.model.entity.ApplyTeacher;
-import com.momolearn.model.service.ApplyTeacherService;
-import com.momolearn.model.service.MembersService;
-import com.momolearn.model.service.TeachersService;
+import com.momolearn.dto.ApplyTeacherDTO;
+import com.momolearn.dto.MembersDTO;
+import com.momolearn.entity.ApplyTeacher;
+import com.momolearn.service.ApplyTeacherService;
+import com.momolearn.service.MembersService;
+import com.momolearn.service.TeachersService;
 
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 
 @Controller
 @RequestMapping("applyteacher")

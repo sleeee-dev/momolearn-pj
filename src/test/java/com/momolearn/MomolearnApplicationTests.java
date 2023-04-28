@@ -9,14 +9,14 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
-import com.momolearn.model.ApplyTeacherRepository;
-import com.momolearn.model.LikesRepository;
-import com.momolearn.model.MembersRepository;
-import com.momolearn.model.TeachersRepository;
-import com.momolearn.model.service.ApplyTeacherService;
-import com.momolearn.model.service.LikesService;
-import com.momolearn.model.service.MembersService;
-import com.momolearn.model.service.TeachersService;
+import com.momolearn.repository.ApplyTeacherRepository;
+import com.momolearn.repository.LikesRepository;
+import com.momolearn.repository.MembersRepository;
+import com.momolearn.repository.TeachersRepository;
+import com.momolearn.service.ApplyTeacherService;
+import com.momolearn.service.LikesService;
+import com.momolearn.service.MembersService;
+import com.momolearn.service.TeachersService;
 
 @SpringBootTest
 @AutoConfigureMockMvc

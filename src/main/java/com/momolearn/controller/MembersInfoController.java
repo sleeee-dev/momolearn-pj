@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.momolearn.exception.NotExistException;
-import com.momolearn.model.dto.MembersDTO;
-import com.momolearn.model.service.MembersService;
+import com.momolearn.dto.MembersDTO;
+import com.momolearn.service.MembersService;
 
 import lombok.RequiredArgsConstructor;
 

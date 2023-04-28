@@ -4,7 +4,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
-import com.momolearn.model.service.MembersService;
+import com.momolearn.service.MembersService;
 
 import lombok.RequiredArgsConstructor;
 

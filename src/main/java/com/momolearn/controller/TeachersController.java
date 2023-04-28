@@ -12,10 +12,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.momolearn.exception.NotExistException;
-import com.momolearn.model.LecturesRepository;
-import com.momolearn.model.dto.TeachersDTO;
-import com.momolearn.model.entity.Lectures;
-import com.momolearn.model.service.TeachersService;
+import com.momolearn.repository.LecturesRepository;
+import com.momolearn.dto.TeachersDTO;
+import com.momolearn.entity.Lectures;
+import com.momolearn.service.TeachersService;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

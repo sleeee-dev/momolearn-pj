@@ -1,93 +1,77 @@
 package com.momolearn.controller;
 
 
-import java.io.IOException;
-import java.sql.SQLException;
-import java.time.LocalDateTime;
-import java.util.HashMap;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-
+import com.momolearn.dto.MembersDTO;
+import com.momolearn.exception.MessageException;
+import com.momolearn.service.FileService;
+import com.momolearn.service.KakaoService;
+import com.momolearn.service.MembersService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.momolearn.exception.MessageException;
-import com.momolearn.model.dto.MembersDTO;
-import com.momolearn.model.service.FileService;
-import com.momolearn.model.service.KakaoService;
-import com.momolearn.model.service.MembersService;
-
-import lombok.RequiredArgsConstructor;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+import java.io.IOException;
+import java.sql.SQLException;
+import java.time.LocalDateTime;
+import java.util.HashMap;
 
 @Controller
 @RequestMapping("member")
 @SessionAttributes({"members"})
 @RequiredArgsConstructor
 public class MembersSignInController {
-	
+
 	private final MembersService membersService;
-	
+
 	private final FileService fileService;
-	
+
 	private final KakaoService kakaoService;
-	
+
 	@GetMapping(value = "/kakaoLogin")
-	public ModelAndView kakaoLogin(@RequestParam("code") String code, HttpSession session, Model model) throws SQLException, MessageException {
+	public String kakaoLogin(@RequestParam("code") String code, HttpSession session, Model model) throws SQLException, MessageException {
 
 		ModelAndView mv = new ModelAndView();
-		
-		String access_token = kakaoService.getAccessToken(code); 
-		
+
+		String access_token = kakaoService.getAccessToken(code);
+
 		HashMap<String, Object> userInfo = kakaoService.getUserInfo(access_token);
 
 		if(userInfo.get("email") != null) {
-			
+
 	        String email = userInfo.get("email").toString();
 	        String[] memId = email.split("@");
 	        String name = userInfo.get("nickname").toString();
-	        String password = "1111" ;
-	        
+	        String password = "1234";
+
 	        MembersDTO memberDto = new MembersDTO(memId[0], password, name, email, "user.jpg", "student", LocalDateTime.now());
-	        MembersDTO res = membersService.memJoin(memberDto);
-	        
+	        MembersDTO res = membersService.kakaoMemJoin(memberDto);
+
 	        if (res != null) {
-	        	
+
 	            session.setAttribute("memId", email);
 	            session.setAttribute("access_token", access_token);
 	            mv.addObject("memId", email);
-	            
+
 	    		MembersDTO members = membersService.loginMember(memId[0].toString(), password);
-	    		
-	    		if (members != null) { 
-	    			
-	    			model.addAttribute("member", members); 
 
-	    			mv.setViewName("member/joinInfo");
+				model.addAttribute("members", members);
 
-	    		} else {
-	    			
-	    			mv.setViewName("Error");
-	    		}
-	            
+				return "redirect:/";
+
 			}else {
-				
+
 	            throw new RuntimeException("회원가입에 실패하였습니다.");
 	        }
-		
+
 		}
-		return mv;
+
+		return "redirect:/";
 	}
 	
     @GetMapping(value = "/joinView", produces = "application/json; charset=UTF-8")
@@ -185,7 +169,8 @@ public class MembersSignInController {
 		
 		MembersDTO members = membersService.loginMember(memId, password);
 		
-		if (members != null) { 
+		if (members != null) {
+
 			model.addAttribute("members", members); 
 
 			return "redirect:/"; 
@@ -296,5 +281,4 @@ public class MembersSignInController {
 		return "error";
 	}
 
-	
 }
