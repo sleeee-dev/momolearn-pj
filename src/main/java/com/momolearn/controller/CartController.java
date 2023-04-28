@@ -18,10 +18,10 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.momolearn.exception.MessageException;
 import com.momolearn.exception.NotExistException;
-import com.momolearn.model.dto.CartDTO;
-import com.momolearn.model.dto.MembersDTO;
-import com.momolearn.model.dto.PaymentRequestDTO;
-import com.momolearn.model.service.CartService;
+import com.momolearn.dto.CartDTO;
+import com.momolearn.dto.MembersDTO;
+import com.momolearn.dto.PaymentRequestDTO;
+import com.momolearn.service.CartService;
 
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;

@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.momolearn.exception.NotExistException;
-import com.momolearn.model.dto.MembersDTO;
-import com.momolearn.model.service.LikesService;
+import com.momolearn.dto.MembersDTO;
+import com.momolearn.service.LikesService;
 
 import lombok.RequiredArgsConstructor;
 

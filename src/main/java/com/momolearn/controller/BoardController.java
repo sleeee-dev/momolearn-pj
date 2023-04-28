@@ -32,12 +32,12 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.momolearn.exception.NotExistException;
-import com.momolearn.model.dto.BoardDTO;
-import com.momolearn.model.dto.BoardListDTO;
-import com.momolearn.model.dto.BoardSaveDTO;
-import com.momolearn.model.dto.LikesDTO;
-import com.momolearn.model.service.BoardService;
-import com.momolearn.model.service.LikesService;
+import com.momolearn.dto.BoardDTO;
+import com.momolearn.dto.BoardListDTO;
+import com.momolearn.dto.BoardSaveDTO;
+import com.momolearn.dto.LikesDTO;
+import com.momolearn.service.BoardService;
+import com.momolearn.service.LikesService;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

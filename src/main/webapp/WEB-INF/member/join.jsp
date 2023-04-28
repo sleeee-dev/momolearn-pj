@@ -75,14 +75,6 @@
 						</div>
 					</div>
 					
-					<div class="text">
-						<p id="p">간편 가입하기</p>
-					</div>
-					
-					<div class="login_sns">
-						<li><a id="kakao-login-btn" href="https://kauth.kakao.com/oauth/authorize?client_id=b05da66ce6b812c049b788547193fbdc&redirect_uri=http://localhost/momolearn/member/kakaoLogin&response_type=code"><i class="fa-solid fa-comment"></i> 카카오로 회원가입</a></li>
-					</div>
-					
 					<div class="submit">
 						<input type="button" style="background-color: #36cedb;" value="회원가입" onclick="blank()">
 					</div>
@@ -98,37 +90,7 @@
     
     <script>
     
-    var check = false; 
-    
-	Kakao.init('49ef5fc681ad9efc0d82ad0375574e44');
-
-
-	$("#kakao-login-btn").on("click", function(){
-
-	    Kakao.Auth.login({
-	        success: function(authObj) {
-	         
-	 
-	          Kakao.API.request({
-	            url: '/v2/user/me',
-	            success: function(res) {
-	              console.log(res);
-	              var id = res.id;
-				  scope : 'account_email';
-				alert('로그인성공');
-	              location.href="http://localhost/momolearn/";
-			
-	        }
-	          })
-	          console.log(authObj);
-	          var token = authObj.access_token;
-	        },
-	        fail: function(err) {
-	          alert(JSON.stringify(err));
-	        }
-	      });
-	        
-	}) 
+    var check = false;
     
 	function dedupId() {
 		
@@ -220,7 +182,7 @@
 	}
 	</script>
 	
-	<script src = "https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+
 	
 </body>
 </html>

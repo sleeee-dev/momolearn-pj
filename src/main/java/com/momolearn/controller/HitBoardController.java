@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.momolearn.exception.NotExistException;
-import com.momolearn.model.dto.HitBoardDTO;
-import com.momolearn.model.service.BoardService;
+import com.momolearn.dto.HitBoardDTO;
+import com.momolearn.service.BoardService;
 
 import lombok.RequiredArgsConstructor;
 
