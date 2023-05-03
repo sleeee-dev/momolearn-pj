@@ -79,16 +79,16 @@
 
 **💡소제목을 클릭하시면 다시 리스트로 돌아옵니다.**
 
- 1. [회원가입](#join) (일반 회원가입/소셜 간편가입)
+ 1. [회원가입](#join)
  2. [로그인](#login)
- 3. [강사진](#teacher)
- 4. [강사 신청,등록](#applyteacher)
- 5. [강의 등록](#lecture)
- 6. [수강 신청](#payment)
- 7. [게시판](#community)
+ 3. [소셜 간편가입,로그인](#social)
+ 4. [강사진](#teacher)
+ 5. [강사 신청,등록](#applyteacher)
+ 6. [강의 등록](#lecture)
+ 7. [수강 신청](#payment)
+ 8. [게시판](#community)
 
 ### 1. <a name="join">[회원가입](#2)</a>
-#### (1) 일반 회원가입
 ![회원가입](https://user-images.githubusercontent.com/117498827/230251565-fa1a97aa-7689-4471-877f-816c69f8548c.gif)
 
 ⚡필수 기입 속성은 ID, PW, 이름, Email 입니다.<br>
@@ -96,17 +96,19 @@
 ⚡프로필 사진은 등록하지 않으면 'user.jsp'라는 모모런 기본 프로필로 등록이 됩니다.<br>
 <img width="142" alt="image" src="https://user-images.githubusercontent.com/117498827/230252114-9eee75df-41e8-4be2-9d44-2edc9cc9674c.png">
 
-#### (2) 소셜 간편가입
-![소셜회원가입](https://user-images.githubusercontent.com/117498827/230406090-d0f1cd02-46fd-4f40-b951-c8f2ab39fc59.gif)
-⚡소셜 회원가입 시 개인정보 제공에 대한 동의서를 제시합니다. 동의 항목은 닉네임, 이메일주소입니다.<br>
-⚡가입정보는 회원테이블에 저장되며, 이후 일반로그인으로 로그인이 가능합니다.<br>
-⚡가입시 카카오계정의 ID부분이 모모런의 ID가 됩니다.<br>
 
 ### 2. <a name="login">[로그인](#2)</a>
 ![일반 로그인](https://user-images.githubusercontent.com/117498827/230252820-0b2446d8-be9a-4a7f-9132-3ef179198280.gif)
 ⚡필수 기입 속성은 ID, PW입니다.<br>
+<br>
 
-### 3. <a name="teacher">[강사진](#2)</a>
+### 3. <a name="social">[소셜 간편가입,로그인](#3)</a>
+![소셜로그인](https://user-images.githubusercontent.com/130329058/235978543-f6747667-f06a-4dd0-ba7e-74dde7c4b05d.gif)
+⚡소셜 회원가입 시 개인정보 제공에 대한 동의서를 제시합니다. 동의 항목은 닉네임, 이메일주소입니다.<br>
+⚡가입정보는 회원테이블에 저장되며, 이후에는 등록된 아이디일 경우 바로 로그인이 됩니다.<br>
+⚡가입시 카카오계정의 이메일주소의 @앞부분이 모모런의 ID, 기본 비밀번호는 1234로 설정됩니다.<br>
+
+### 3. <a name="teacher">[강사진](#3)</a>
 
 <p align="center">
 
@@ -197,12 +199,11 @@
 14. 공지사항 게시판
 
 ## [💣](#list)<a name="3">3. 트러블 슈팅</a>
-☑ Lecture 조회 쿼리에서 강의를 조회한 후 카테고리를 조회하여 1+N 문제 발생<br>
-👉join fetch를 사용하여 해결하려고 하였으나, 쿼리 중복이 발생하여 강의 개수만큼 카테고리의 배열이 출력되는 이슈가 새롭게 발생하여 EntityGraph를 사용하여 해결하였습니다.<br>
-☑ 인기게시물 조회시 순환참조로 인한 직렬화 에러 발생<br>
-👉 @JsonIgnore이나 yml파일 FAIL_ON_EMPTY_BEANS: false 설정 등 여러 해결책이 있으나 근본적인 문제해결을 위해 필요한 데이터만 담은 DTO객체를 만들어 조회하여 해결했습니다.<br>
-☑ 좋아요한 글 목록 조회시 fetch join과 paging 병용 불가<br>
-👉 JPA에서 paging할때 -ToMany 관계는 데이터의 수가 변해 fetch join이 불가능. fetch join을 제거하고 application.yml에 default_batch_fetch_size=10 추가해주었습니다.<br>
+☑ 소셜 간편가입 이후 소셜로그인은 실패해서 일반로그인으로 해야하는 문제 발생<br>
+👉 서비스에서 일반 회원가입과 같은 클래스를 사용하여 소셜 간편가입 이후에도 소셜 로그인을 시도하면<br>
+이미 존재하는 아이디일 경우 가입실패가 되어 해당 문제가 일어난 것을 발견함.<br>
+이미 존재하는 아이디일 경우 가입실패가 아닌 로그인이 되도록 소셜 로그인 클래스를 새로 만들어서 로직을 수정하여 해결함.<br>
+
 ## [✨](#list)<a name="4">4. 프로젝트 개선할 점</a>
 ✅ 
 ✅   
