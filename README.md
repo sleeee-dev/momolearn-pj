@@ -73,7 +73,7 @@
 
 </p>
 
-## 💻<a name="2">[주요 기능](#list)</a>
+## 💻<a name="2">[담당 기능](#list)</a>
 
 <img src="https://user-images.githubusercontent.com/111185073/230519744-787b374d-6c0d-457f-b083-bd7d1fadc75c.png"/>
 
@@ -84,9 +84,9 @@
  3. [소셜 간편가입,로그인](#social)
  4. [강사진](#teacher)
  5. [강사 신청,등록](#applyteacher)
- 6. [강의 등록](#lecture)
+<!-- 6. [강의 등록](#lecture)
  7. [수강 신청](#payment)
- 8. [게시판](#community)
+ 8. [게시판](#community) -->
 
 ### 1. <a name="join">[회원가입](#2)</a>
 ![회원가입](https://user-images.githubusercontent.com/117498827/230251565-fa1a97aa-7689-4471-877f-816c69f8548c.gif)
@@ -142,6 +142,7 @@
 ⚡신청서는 수정과 삭제가 가능하며, 관리자가 승인처리시 수정과 삭제가 불가능합니다.<br>
 <br>
 
+<!--
 ### 6. <a name="lecture">[강의 등록](#2)</a>
 
 ![강의등록](https://user-images.githubusercontent.com/117498827/230260375-5400e8c9-afdc-4c3f-a680-8d9b238d7634.gif)
@@ -181,7 +182,7 @@
 ⚡조회는 전체 등급이 가능하며, 작성/수정/삭제는 관리자 등급만 가능합니다.<br>
 ⚡사진 등록시 해당 사진이 썸네일로 노출됩니다.<br>
 <br>
-
+-->
 
 1. 회원가입/탈퇴/로그인
 2. 소셜 간편회원가입
