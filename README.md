@@ -73,8 +73,10 @@
 <img src="https://img.shields.io/badge/chat gpt-412991?style=for-the-badge&logo=openai&logoColor=white">
 
 </p>
+
 ## 💻<a name="2">[전체 기능](#list)</a>
 <img src="https://user-images.githubusercontent.com/111185073/230519744-787b374d-6c0d-457f-b083-bd7d1fadc75c.png"/>
+<br>
 
 ## 🧩<a name="3">[담당 기능](#list)</a>
 
