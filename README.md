@@ -82,49 +82,22 @@
 <br>
 
 ## 🧩<a name="3">[담당 기능](#list)</a>
-
+일반로그인, 소셜로그인, id/pw 찾기, 강사 신청/승인, 강사진 목록
 
 
 **💡소제목을 클릭하시면 다시 리스트로 돌아옵니다.**
 
-<!-- 1. [회원가입](#join)
- 2. [로그인](#login)
- 3. [소셜 간편가입,로그인](#social)
- 4. [강사진](#teacher)
- 5. [강사 신청,등록](#applyteacher)
- 6. [강의 등록](#lecture)
- 7. [수강 신청](#payment)
- 8. [게시판](#community) -->
- 
- 1. [로그인, 소셜 로그인](#login)
- 2. [ID, PW 찾기](#find)
- 3. [강사 신청,승인, 강사진 목록](#teacher)
+ 1. [회원가입](#join)
+ 2. [로그인, 소셜 로그인](#login)
+ 3. [ID, PW 찾기](#find)
+ 4. [강사 신청,승인, 강사진 목록](#teacher)
+ 5. [강의 등록](#lecture)
+ 6. [수강 신청](#payment)
+ 7. [게시판](#community)
 
 
-### 1. <a name="login">[로그인, 소셜 로그인](#1)</a>
-⚡ 세션을 사용하여 일반 로그인 기능을 구현하였습니다.<br>
-⚡ 카카오 REST API를 활용하여 소셜 회원 가입 및 로그인 기능을 구현하였습니다. <br>
-![일반 로그인](https://user-images.githubusercontent.com/117498827/230252820-0b2446d8-be9a-4a7f-9132-3ef179198280.gif)
-![소셜로그인](https://user-images.githubusercontent.com/130329058/235978543-f6747667-f06a-4dd0-ba7e-74dde7c4b05d.gif)
-<br>
 
-### 2. <a name="find">[ID, PW 찾기](#2)</a>
-⚡ID, PW 찾기 기능은 Spring Data JPA를 사용하여 구현하였습니다.<br>
 
-### 3. <a name="teacher">[강사 신청,승인, 강사진 목록](#3)</a>
-⚡ 강사 신청 및 승인 기능을 개발하기 위해 Spring Data JPA를 활용하여 게시판의 CRUD 기능을 구현하였습니다.<br>
-⚡ 강사진 목록은 Axios 비동기 통신으로 구현하였습니다.<br>
-<br>
-#### (1) 강사 신청
-<img src="https://user-images.githubusercontent.com/117498827/230254773-c21529f7-6f8d-4d69-8f75-4514dc600bcf.gif" alt="강사신청"/><br>
-
-#### (2) 강사 승인,등록
-<img src="https://user-images.githubusercontent.com/117498827/230516168-2917b3f3-35e2-4006-a7c8-667d2064b712.gif" alt="강사 승인"/><br>
-
-#### (3) 강사진 목록
-<br><br><br><br>
-
-<!--
 ### 1. <a name="join">[회원가입](#2)</a>
 ![회원가입](https://user-images.githubusercontent.com/117498827/230251565-fa1a97aa-7689-4471-877f-816c69f8548c.gif)
 
@@ -134,52 +107,38 @@
 <img width="142" alt="image" src="https://user-images.githubusercontent.com/117498827/230252114-9eee75df-41e8-4be2-9d44-2edc9cc9674c.png">
 
 
-### 2. <a name="login">[로그인](#2)</a>
+### 2. <a name="login">[로그인, 소셜 로그인](#2)</a>
+⚡ 세션을 사용하여 일반 로그인 기능을 구현하였습니다.<br>
+⚡ 카카오 REST API를 활용하여 소셜 회원 가입 및 로그인 기능을 구현하였습니다. <br>
 ![일반 로그인](https://user-images.githubusercontent.com/117498827/230252820-0b2446d8-be9a-4a7f-9132-3ef179198280.gif)
-⚡필수 기입 속성은 ID, PW입니다.<br>
-<br>
-
-### 3. <a name="social">[소셜 간편가입,로그인](#3)</a>
 ![소셜로그인](https://user-images.githubusercontent.com/130329058/235978543-f6747667-f06a-4dd0-ba7e-74dde7c4b05d.gif)
-⚡소셜 회원가입 시 개인정보 제공에 대한 동의서를 제시합니다. 동의 항목은 닉네임, 이메일주소입니다.<br>
-⚡가입정보는 회원테이블에 저장되며, 이후에는 등록된 아이디일 경우 바로 로그인이 됩니다.<br>
-⚡가입시 카카오계정의 이메일주소의 @앞부분이 모모런의 ID, 기본 비밀번호는 1234로 설정됩니다.<br>
-
-### 4. <a name="teacher">[강사진](#3)</a>
-
-<p align="center">
-
-</p>
-
-⚡강사진 목록에 등록된 강사진을 확인할 수 있고 프로필 상세보기를 통해 강사의 프로필을 확인할 수 있습니다.<br>
-⚡강사 프로필에서 개설강의를 통해 강사가 개설한 강의목록을 확인하고 해당 강의를 신청할 수 있습니다. - 개발중<br>
-
 <br>
 
-### 5. <a name="applyteacher">[강사 신청,등록](#2)</a>
+### 3. <a name="find">[ID, PW 찾기](#2)</a>
+⚡ID, PW 찾기 기능은 Spring Data JPA를 사용하여 구현하였습니다.<br>
 
+### 4. <a name="teacher">[강사 신청,승인, 강사진 목록](#2)</a>
+⚡ 강사 신청 및 승인 기능을 개발하기 위해 Spring Data JPA를 활용하여 게시판의 CRUD 기능을 구현하였습니다.<br>
+⚡ 강사진 목록은 Axios 비동기 통신으로 구현하였습니다.<br>
+<br>
 #### (1) 강사 신청
-
-<p align="center">
- 
-<img src="https://user-images.githubusercontent.com/117498827/230254773-c21529f7-6f8d-4d69-8f75-4514dc600bcf.gif" alt="강사신청" width="500"/>
-</p>
-
-#### (2) 강사 승인,등록
-
-<p align="center">
-<img src="https://user-images.githubusercontent.com/117498827/230516168-2917b3f3-35e2-4006-a7c8-667d2064b712.gif" alt="강사 승인" width="500"/><br>
-
-</p>
-
+<img src="https://user-images.githubusercontent.com/117498827/230254773-c21529f7-6f8d-4d69-8f75-4514dc600bcf.gif" alt="강사신청"/><br>
 ⚡강사 신청 가능 등급은 student(학생)입니다.<br>
 ⚡한 회원당 신청서는 하나만 작성할 수 있습니다.<br>
 ⚡기존 회원의 정보가 신청서에 입력되며, 필수 기입 속성은 연락처, 포트폴리오url, 희망분야, 자기소개입니다.<br>
 ⚡관리자는 회원들의 신청서를 모두 조회할 수 있고, 승인할 수 있습니다.<br>
 ⚡신청서는 수정과 삭제가 가능하며, 관리자가 승인처리시 수정과 삭제가 불가능합니다.<br>
-<br>
+#### (2) 강사 승인,등록
+<img src="https://user-images.githubusercontent.com/117498827/230516168-2917b3f3-35e2-4006-a7c8-667d2064b712.gif" alt="강사 승인"/><br>
 
-### 6. <a name="lecture">[강의 등록](#2)</a>
+#### (3) 강사진 목록
+
+⚡강사진 목록에 등록된 강사진을 확인할 수 있고 프로필 상세보기를 통해 강사의 프로필을 확인할 수 있습니다.<br>
+⚡강사 프로필에서 개설강의를 통해 강사가 개설한 강의목록을 확인하고 해당 강의를 신청할 수 있습니다. - 개발중<br>
+<br><br><br><br>
+
+
+### 5. <a name="lecture">[강의 등록](#2)</a>
 
 ![강의등록](https://user-images.githubusercontent.com/117498827/230260375-5400e8c9-afdc-4c3f-a680-8d9b238d7634.gif)
 
@@ -189,7 +148,7 @@
 ⚡강의는 강의의 주인인 강사가 수정과 삭제가 가능합니다. 강좌 마다 수정이 가능하며, 강좌 추가가 가능합니다.<br>
 <br>
 
-### 7. <a name="payment">[수강 신청](#2)</a>
+### 6. <a name="payment">[수강 신청](#2)</a>
 
 <p align="center">
  
@@ -204,7 +163,7 @@
 ⚡결제 후에 내 강의페이지로 이동합니다.<br>
 <br>
 
-### 8. <a name="community">[게시판](#2)</a>
+### 7. <a name="community">[게시판](#2)</a>
 #### (1) 커뮤니티
 ![커뮤니티](https://user-images.githubusercontent.com/122508872/231379842-1dbe3303-e59a-4c9e-9b40-f36727a750c9.gif)<br>
 ⚡전체 등급이 읽기/작성/수정/삭제가 가능하며, 수정과 삭제는 작성자만 가능합니다.<br>
@@ -219,7 +178,6 @@
 ⚡사진 등록시 해당 사진이 썸네일로 노출됩니다.<br>
 <br>
 -->
-
 <!--
 1. 회원가입/탈퇴/로그인
 2. 소셜 간편회원가입
